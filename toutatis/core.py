@@ -94,6 +94,10 @@ def main():
     print("Is private Account     : "+str(infos["is_private"]))
     print("Follower               : "+str(infos["follower_count"]) + " | Following : "+str(infos["following_count"]))
     print("Number of posts        : "+str(infos["media_count"]))
+    try:
+    print("Number of tag in posts : " + str(infos["following_tag_count"]))
+except KeyError:
+    print("Key 'following_tag_count' not found. Skipping this info.")
     if infos["external_url"]:
         print("External url           : "+infos["external_url"])
     print("IGTV posts             : "+str(infos["total_igtv_videos"]))
